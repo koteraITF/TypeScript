@@ -53,4 +53,26 @@ const SampleText = "sample"]
 `type SampleText = number | string;`
 のようにtype関数を使うことで、あらかじめSampleTextの型を定義することができる。
 
+## Function型
 
+`let comibine: Function;`  
+上記のようにFunction型を指定することで、combineには関数しか代入できなくなる。
+また、関数の型に関して、詳しく型を定義することができる。  
+`let combine: (a1:number, a2:number) = > number;`
+のように指定することで、数値型の引数２つを取得する関数しかcombineには代入できなくなる。
+
+## コールバック関数
+
+下記のようにコールバック関数cbがvoidであることを示し、戻り値がないと示しても、  
+下記のAddAndHandleメソッドのようにreturnを返すことができる。つまり、voidは戻り値を返すことを強制しない型である。  
+```
+function AddAndHandle(n1:number, n2:number, cb:(num:number) => void){
+  const result = n1 + n2;
+  cb(result);
+}
+
+AddAndHandle(10,20,(result:number) => {
+  console.log(result);
+  return result;
+})
+```

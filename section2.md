@@ -76,3 +76,7 @@ AddAndHandle(10,20,(result:number) => {
   return result;
 })
 ```
+
+## never型
+関数が「絶対に戻り値を返さない」型である。
+void型と似ているが、void型と違い、関数が”絶対に”型を返さない点で異なる。

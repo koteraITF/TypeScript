@@ -37,3 +37,7 @@ class Department {
 const accounting = new Department("Accounting");
 accounting.describe(); // Accounting
 ```
+
+## TypeScriptのアクセス修飾子
+TSのprivateはクラス内でのみアクセスできる。  
+readonlyは読み取り専用で変更ができない。(Javaでいうfinal)  

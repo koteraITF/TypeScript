@@ -99,5 +99,80 @@ user1 = {　　　　　　　　　//Personインタフェースに基づきオ
 
 ```
 
+## typeとinterface
+
+typeとは型を定義するものであり、下記のように、インタフェースと同じように利用できる。  
+また、typeの方がunion型などを利用でき、汎用性が高いが、
+インタフェースのほうがオブジェクトを定義する意図を示すことができるため、オブジェクトの型を作るときはインタフェースのほうが望ましい。  
+また、下記のようにインタフェースのプロパティの後ろに？をつけることで、そのプロパティを実施を任意にさせることができる。
+```
+interface Person {
+  name: string;
+  age: number;
+  hobby?: string
+
+}
+
+type Person {
+  name: string;
+  age: number;
+
+}
+
+```
+また、Javaと同様に、Personインタフェースに基づくHumanクラスを下記のように作成できる。
+```
+interface Person {
+  name: string;
+  age: number;
+
+}
+
+class Human implements Person {
+  name: "akira",
+  age: 3
+}
+
+```
+
+## 読み取り専用インタフェース、継承インタフェース
+
+インタフェースには、下記コマンドex1のように、プロパティの前にreadonlyをつけると読み取り専用のプロパティにできる。
+readonlyにすると、name変数は再定義できなくなる。(javaでいうfinal)  
+また、ex2)のようにPersonインタフェースを継承したSampleインタフェースを利用できる。  
+インタフェースを継承するとはたまげたなぁ...  
+
+```
+ex1)
+
+interface Person {
+  readonly name: string;
+  age: number;
+
+}
+
+type Person {
+  name: string;
+  age: number;
+
+}
+
+ex2)
+
+interface Sample extends Person {
+ address: string;
+ }
+
+```
+
+## 関数インタフェース
+
+下記のように関数のインタフェースも作成できる。  
+```
+interface Add {
+  (a: number, b: number): number;
+}
+
+```
 
 

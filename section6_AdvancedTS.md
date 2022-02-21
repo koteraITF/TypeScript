@@ -60,3 +60,21 @@ const errorBag: ErrorContainer = {
 };
 ```
 
+## 関数オーバーロード
+関数オーバーロードは、定義済みの関数の型にさらに型を追加することである。  
+
+下記のように、add関数は2種類の関数の型で宣言されており、  
+上の型では、aとbがnumber型であった場合は、結果がnumber型であると宣言できる。
+```
+type Combinable = string | number;
+
+function add(a: number, b:number): number;　/////関数オーバーロード
+
+function add(a: Combinable, b: Combinable) {
+  if(typeof a === 'string' || typeof b === 'string'){
+    return a.toString() + b.toString();
+  }
+  return a + b
+}
+```
+

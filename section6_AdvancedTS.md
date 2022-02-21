@@ -78,3 +78,17 @@ function add(a: Combinable, b: Combinable) {
 }
 ```
 
+## NULL合体演算子 (??)
+
+下記のように、 ??　を用いて判別することをNULL合体演算子という。
+`const Data = userInput ?? 'DEFAULT';`ここで、userInputがNULL or undefinedであった場合は、DEFAULTが返され、userInputがそれ以外であった場合は、userInputの中身が返される  
+今回は、下記のような結果となる。
+```
+const userInput = undefined;
+const Data = userInput ?? 'DEFAULT'; //////NULL合体演算子
+console.log(Data) // DEFAULT
+
+const userInput = "okay";
+const Data = userInput ?? 'DEFAULT';
+console.log(Data) // okay
+```

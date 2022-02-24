@@ -19,3 +19,14 @@ export const TodoList: React.FC<TodoListProps> = (props) => {
 };
 
 ```
+
+また、useStateにも型を割り当てる必要がある。
+
+```
+type Todo = {
+ text: string,
+ id: string,
+}
+
+const [todos , setTodos] = useState<Todo[]>([]);
+```
